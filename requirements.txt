@@ -1,3 +1,0 @@
-python==3.14.7
-selenium==4.54.0
-pytest==9.2.0
