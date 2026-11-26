@@ -1,5 +1,0 @@
-REGISTRATION_URL="https://stellarburgers.education-services.ru/register"
-MAIN_URL="https://stellarburgers.education-services.ru/"
-FORGOT_PASSWORD_URL="https://stellarburgers.education-services.ru/forgot-password"
-LOGIN_PAGE_URL="https://stellarburgers.education-services.ru/login"
-PROFILE_URL="https://stellarburgers.education-services.ru/account/profile"
