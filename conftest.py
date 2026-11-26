@@ -21,21 +21,26 @@ def driver():
     finally:
         browser.quit()
 
-@pytest.fixture
-def random_email():
+def generate_random_email():
     first_name = "Vitalii"
     last_name = "Antonichev"
     cohort_number = 59
     domain = "yandex.ru"
     random_digits = f"{random.randint(0, 999):03d}"
-    email = f"{first_name.lower()}_{last_name.lower()}_{cohort_number}_{random_digits}@{domain}"
-    return email
+    return f"{first_name.lower()}_{last_name.lower()}_{cohort_number}_{random_digits}@{domain}"
 
 @pytest.fixture
-def random_pass():
+def random_email():
+    return generate_random_email()
+
+def generate_random_password():
     length = random.randint(6, 10)
     chars = string.ascii_letters + string.digits
     return ''.join(random.choice(chars) for _ in range(length))
+
+@pytest.fixture
+def random_pass():
+    return generate_random_password()
 
 @pytest.fixture
 def login(driver):

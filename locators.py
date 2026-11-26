@@ -3,22 +3,22 @@ from selenium.webdriver.common.by import By
 
 class RegistrationLocators:
 
-    REG_NAME_FIELD = (By.XPATH, "//fieldset[1]//input")  #Поле ввода имени на странице регистрации
-    REG_EMAIL_FIELD = (By.XPATH, "//fieldset[2]//input")  #Поле ввода email на странице регистрации
-    REG_PASSWORD_FIELD = (By.XPATH, "//fieldset[3]//input")  #Поле ввода пароля на странице регистрации
+    REG_NAME_FIELD = (By.XPATH, "//div[normalize-space(label)='Имя']/input")  #Поле ввода имени на странице регистрации
+    REG_EMAIL_FIELD = (By.XPATH, "//div[normalize-space(label)='Email']/input")  #Поле ввода email на странице регистрации
+    REG_PASSWORD_FIELD = (By.XPATH, "//div[normalize-space(label)='Пароль']/input")  #Поле ввода пароля на странице регистрации
     REG_BUTTON = (By.XPATH, "//button[normalize-space()='Зарегистрироваться']")  #Кнопка "Зарегистрироваться" на странице регистрации
     PASSWORD_ERROR_MESSAGE = (By.CSS_SELECTOR, "p.input__error.text_type_main-default")  #Сообщение о неверном пароле на странице регистрации
     REG_LOGIN_BUTTON = (By.CSS_SELECTOR, "a[href='/login']")  #Кнопка "Войти" на странице регистрации
 
 class AuthorizationLocators:
     AUTH_FORM = (By.XPATH, "//main//h2[normalize-space()='Вход']")  #Название формы авторизации
-    AUTH_EMAIL_FIELD = (By.XPATH, "//fieldset[1]//input")  #Поле ввода email на странице авторизации
-    AUTH_PASSWORD_FIELD = (By.XPATH, "//fieldset[2]//input")  #Поле ввода пароля на странице авторизации
+    AUTH_EMAIL_FIELD = (By.XPATH, "//label[text()='Email']/../input")  #Поле ввода email на странице авторизации
+    AUTH_PASSWORD_FIELD = (By.XPATH, "//label[text()='Пароль']/../input")  #Поле ввода пароля на странице авторизации
     AUTH_BUTTON = (By.XPATH, "//main//button[normalize-space()='Войти']")  #Кнопка "Войти" на странице авторизации
 
 class MainPageLocators:
     AUTH_ACC_BUTTON = (By.XPATH, "//main//button[normalize-space()='Войти в аккаунт']")  #Кнопка "Войти в аккаунт" на главной странице
-    PLACE_ORDER_BUTTON = (By.XPATH, "//section[2]//button[normalize-space()='Оформить заказ']")  #Кнопка "Оформить заказ" на главной странице для авторизованного пользователя
+    PLACE_ORDER_BUTTON = (By.XPATH, "//button[normalize-space(text())='Оформить заказ']")  #Кнопка "Оформить заказ" на главной странице для авторизованного пользователя
     ACCOUNT_BUTTON = (By.CSS_SELECTOR, "a[href='/account']")  #Кнопка "Личный кабинет" на главной странице
     CONSTRUCT_BURGER = (By.XPATH, "//h1[normalize-space()='Соберите бургер']")  #Название формы конструктора бургера "Соберите бургер" на главной странице
     BUNS_BUTTON = (By.XPATH, "//span[normalize-space()='Булки']/..")  #Кнопка переключения на раздел "Булки" в конструкторе бургеров на главной странице
